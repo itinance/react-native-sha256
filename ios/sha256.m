@@ -8,13 +8,31 @@
 
 #import "sha256.h"
 
-@implementation sha256
+#import <React/RCTUtils.h>
+#import <React/RCTImageLoader.h>
 
-RCT_EXPORT_METHOD(sha256:(NSString *)data
-                  resolver:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject)
+#include <CommonCrypto/CommonDigest.h>
+
+@implementation sha256Lib
+
+RCT_EXPORT_METHOD(sha256: (NSString *) data
+                  resolver: (RCTPromiseResolveBlock) resolve
+                  rejecter: (RCTPromiseRejectBlock) reject)
+
 {
-    resolve(data);
+    NSLog(@"sha 256 %@", data);
+    
+    const char* str = [data UTF8String];
+    unsigned char result[CC_SHA256_DIGEST_LENGTH];
+    CC_SHA256(str, strlen(str), result);
+    
+    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH*2];
+    for(int i = 0; i<CC_SHA256_DIGEST_LENGTH; i++)
+    {
+        [ret appendFormat:@"%02x",result[i]];
+    }
+    
+    resolve(ret);
 }
 
 @end
