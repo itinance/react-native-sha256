@@ -22,8 +22,6 @@ RCT_EXPORT_METHOD(sha256: (NSString *) data
                   rejecter: (RCTPromiseRejectBlock) reject)
 
 {
-    NSLog(@"sha 256 %@", data);
-    
     const char* str = [data UTF8String];
     unsigned char result[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256(str, strlen(str), result);
