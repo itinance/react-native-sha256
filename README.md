@@ -20,7 +20,7 @@ import { sha256 } from 'react-native-sha256';
 
 Build a sha256-hash:
 
-```
+```javascript
 sha256("Test").then( hash => {
     console.log(hash);
 })
