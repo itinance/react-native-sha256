@@ -8,6 +8,7 @@ natively.
 # Installation
 ```
 yarn add react-native-sha256
+react-native link
 ```
 
 # Usage
