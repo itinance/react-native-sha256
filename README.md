@@ -28,5 +28,5 @@ sha256("Test").then( hash => {
 
 # File-Hashes
 
-If you need to calculate SHA-256 hashes from a file, use this [method]
-(https://github.com/itinance/react-native-fs#hashfilepath-string-algorithm-string-promisestring).
+If you need to calculate SHA-256 hashes from a file, use this method:
+(https://github.com/itinance/react-native-fs#hashfilepath-string-algorithm-string-promisestring)
