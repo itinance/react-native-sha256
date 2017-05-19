@@ -15,6 +15,8 @@
 
 @implementation sha256Lib
 
+RCT_EXPORT_MODULE()
+
 RCT_EXPORT_METHOD(sha256: (NSString *) data
                   resolver: (RCTPromiseResolveBlock) resolve
                   rejecter: (RCTPromiseRejectBlock) reject)

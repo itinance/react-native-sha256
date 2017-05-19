@@ -5,10 +5,9 @@
 
 'use strict';
 
-// This file supports both iOS and Android
+const {NativeModules} = require('react-native')
+const sha256Lib = NativeModules.sha256Lib;
 
-var sha256Lib = require('react-native').NativeModules.sha256Lib;
-
-function sha256(data) {
-  return data;
+export function sha256(data) {
+  return sha256Lib.sha256(data);
 }
