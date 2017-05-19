@@ -1,5 +1,5 @@
 /**
- * React Native FS
+ * react-native-sha256
  * @flow
  */
 
