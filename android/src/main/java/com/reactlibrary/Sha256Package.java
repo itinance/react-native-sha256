@@ -16,7 +16,6 @@ public class Sha256Package implements ReactPackage {
       return Arrays.<NativeModule>asList(new Sha256Module(reactContext));
     }
 
-    @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
       return Collections.emptyList();
     }
