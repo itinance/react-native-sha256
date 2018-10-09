@@ -1,4 +1,4 @@
-package com.sha256lib;
+package com.sha512lib;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,10 +10,10 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
-public class Sha256Package implements ReactPackage {
+public class Sha512Package implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new Sha256Module(reactContext));
+      return Arrays.<NativeModule>asList(new Sha512Module(reactContext));
     }
 
     public List<Class<? extends JavaScriptModule>> createJSModules() {

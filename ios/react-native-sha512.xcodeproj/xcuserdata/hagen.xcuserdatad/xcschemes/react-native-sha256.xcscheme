@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CD7408D61ECDFA2900866FA7"
-               BuildableName = "libreact-native-sha256.a"
-               BlueprintName = "react-native-sha256"
-               ReferencedContainer = "container:react-native-sha256.xcodeproj">
+               BuildableName = "libreact-native-sha512.a"
+               BlueprintName = "react-native-sha512"
+               ReferencedContainer = "container:react-native-sha512.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD7408D61ECDFA2900866FA7"
-            BuildableName = "libreact-native-sha256.a"
-            BlueprintName = "react-native-sha256"
-            ReferencedContainer = "container:react-native-sha256.xcodeproj">
+            BuildableName = "libreact-native-sha512.a"
+            BlueprintName = "react-native-sha512"
+            ReferencedContainer = "container:react-native-sha512.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD7408D61ECDFA2900866FA7"
-            BuildableName = "libreact-native-sha256.a"
-            BlueprintName = "react-native-sha256"
-            ReferencedContainer = "container:react-native-sha256.xcodeproj">
+            BuildableName = "libreact-native-sha512.a"
+            BlueprintName = "react-native-sha512"
+            ReferencedContainer = "container:react-native-sha512.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

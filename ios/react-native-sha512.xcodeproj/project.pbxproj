@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD7408E51ECDFA9800866FA7 /* sha256.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7408E41ECDFA9800866FA7 /* sha256.m */; };
+		CD7408E51ECDFA9800866FA7 /* sha512.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7408E41ECDFA9800866FA7 /* sha512.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CD7408D71ECDFA2900866FA7 /* libreact-native-sha256.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-sha256.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD7408E31ECDFA9800866FA7 /* sha256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha256.h; sourceTree = "<group>"; };
-		CD7408E41ECDFA9800866FA7 /* sha256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sha256.m; sourceTree = "<group>"; };
+		CD7408D71ECDFA2900866FA7 /* libreact-native-sha512.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-sha512.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD7408E31ECDFA9800866FA7 /* sha512.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha512.h; sourceTree = "<group>"; };
+		CD7408E41ECDFA9800866FA7 /* sha512.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sha512.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,8 +42,8 @@
 		CD7408CE1ECDFA2900866FA7 = {
 			isa = PBXGroup;
 			children = (
-				CD7408E31ECDFA9800866FA7 /* sha256.h */,
-				CD7408E41ECDFA9800866FA7 /* sha256.m */,
+				CD7408E31ECDFA9800866FA7 /* sha512.h */,
+				CD7408E41ECDFA9800866FA7 /* sha512.m */,
 				CD7408D81ECDFA2900866FA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,7 +51,7 @@
 		CD7408D81ECDFA2900866FA7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD7408D71ECDFA2900866FA7 /* libreact-native-sha256.a */,
+				CD7408D71ECDFA2900866FA7 /* libreact-native-sha512.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,9 +59,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CD7408D61ECDFA2900866FA7 /* react-native-sha256 */ = {
+		CD7408D61ECDFA2900866FA7 /* react-native-sha512 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD7408E01ECDFA2900866FA7 /* Build configuration list for PBXNativeTarget "react-native-sha256" */;
+			buildConfigurationList = CD7408E01ECDFA2900866FA7 /* Build configuration list for PBXNativeTarget "react-native-sha512" */;
 			buildPhases = (
 				CD7408D31ECDFA2900866FA7 /* Sources */,
 				CD7408D41ECDFA2900866FA7 /* Frameworks */,
@@ -71,9 +71,9 @@
 			);
 			dependencies = (
 			);
-			name = "react-native-sha256";
-			productName = "react-native-sha256";
-			productReference = CD7408D71ECDFA2900866FA7 /* libreact-native-sha256.a */;
+			name = "react-native-sha512";
+			productName = "react-native-sha512";
+			productReference = CD7408D71ECDFA2900866FA7 /* libreact-native-sha512.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -91,7 +91,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CD7408D21ECDFA2900866FA7 /* Build configuration list for PBXProject "react-native-sha256" */;
+			buildConfigurationList = CD7408D21ECDFA2900866FA7 /* Build configuration list for PBXProject "react-native-sha512" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -103,7 +103,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD7408D61ECDFA2900866FA7 /* react-native-sha256 */,
+				CD7408D61ECDFA2900866FA7 /* react-native-sha512 */,
 			);
 		};
 /* End PBXProject section */
@@ -113,7 +113,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD7408E51ECDFA9800866FA7 /* sha256.m in Sources */,
+				CD7408E51ECDFA9800866FA7 /* sha512.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +231,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD7408D21ECDFA2900866FA7 /* Build configuration list for PBXProject "react-native-sha256" */ = {
+		CD7408D21ECDFA2900866FA7 /* Build configuration list for PBXProject "react-native-sha512" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD7408DE1ECDFA2900866FA7 /* Debug */,
@@ -240,7 +240,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD7408E01ECDFA2900866FA7 /* Build configuration list for PBXNativeTarget "react-native-sha256" */ = {
+		CD7408E01ECDFA2900866FA7 /* Build configuration list for PBXNativeTarget "react-native-sha512" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD7408E11ECDFA2900866FA7 /* Debug */,

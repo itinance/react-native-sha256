@@ -1,19 +1,19 @@
 //
-//  sha256.m
-//  react-native-sha256
+//  sha512.m
+//  react-native-sha512
 //
 //  Created by Hagen Hübel on 18/05/2017.
 //  Copyright © 2017 ITinance GmbH. All rights reserved.
 //
 
-#import "sha256.h"
+#import "sha512.h"
 
 #import <React/RCTUtils.h>
 #import <React/RCTImageLoader.h>
 
 #include <CommonCrypto/CommonDigest.h>
 
-@implementation sha256Lib
+@implementation sha512Lib
 
 RCT_EXPORT_MODULE()
 
@@ -32,6 +32,25 @@ RCT_EXPORT_METHOD(sha256: (NSString *) data
         [ret appendFormat:@"%02x",result[i]];
     }
     
+    resolve(ret);
+}
+
+
+RCT_EXPORT_METHOD(sha512: (NSString *) data
+                  resolver: (RCTPromiseResolveBlock) resolve
+                  rejecter: (RCTPromiseRejectBlock) reject)
+
+{
+    const char* str = [data UTF8String];
+    unsigned char result[CC_SHA512_DIGEST_LENGTH];
+    CC_SHA512(str, strlen(str), result);
+
+    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH*2];
+    for(int i = 0; i<CC_SHA512_DIGEST_LENGTH; i++)
+    {
+        [ret appendFormat:@"%02x",result[i]];
+    }
+
     resolve(ret);
 }
 
