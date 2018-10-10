@@ -7,7 +7,6 @@
 
 const {NativeModules} = require('react-native')
 const sha512lib = NativeModules.sha512lib;
-console.warn(Object.keys(NativeModules))
 
 
 
