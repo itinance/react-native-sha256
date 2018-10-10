@@ -13,7 +13,7 @@
 
 #include <CommonCrypto/CommonDigest.h>
 
-@implementation sha512Lib
+@implementation sha512lib
 
 RCT_EXPORT_MODULE()
 
