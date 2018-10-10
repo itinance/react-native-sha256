@@ -11,6 +11,6 @@
 #import <React/RCTBridgeModule.h>
 #import <React/RCTLog.h>
 
-@interface sha512Lib : NSObject <RCTBridgeModule>
+@interface sha512lib : NSObject <RCTBridgeModule>
 
 @end
