@@ -10,15 +10,14 @@ const sha512lib = NativeModules.sha512lib;
 console.warn(Object.keys(NativeModules))
 
 
-export default {
 
 
-    sha256 :(data) => {
-        return sha512lib.sha256(data)
-    },
+ const  sha256  = (data) => {
+      return sha512lib.sha256(data)
+  }
 
-    sha512: (data) => {
-        return sha512lib.sha512(data)
-    }
+ const sha512= (data) => {
+      return sha512lib.sha512(data)
+  }
 
-}
+export { sha256 , sha512}

@@ -1,6 +1,6 @@
 {
   "name": "react-native-sha512",
-  "version": "0.0.4-rc",
+  "version": "1.0.0",
   "description": "Native sha512 react-native",
   "main": "sha512.js",
   "scripts": {
