@@ -36,22 +36,21 @@ RCT_EXPORT_METHOD(sha256: (NSString *) data
 }
 
 
-RCT_EXPORT_METHOD(sha512: (NSString *) data
+RCT_EXPORT_METHOD(sha512: (NSString *) string
                   resolver: (RCTPromiseResolveBlock) resolve
                   rejecter: (RCTPromiseRejectBlock) reject)
 
 {
-    const char* str = [data UTF8String];
-    unsigned char result[CC_SHA512_DIGEST_LENGTH];
-    CC_SHA512(str, strlen(str), result);
+    const char *cstr = [string cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithBytes:cstr length:string.length];
+    uint8_t digest[CC_SHA512_DIGEST_LENGTH];
+    CC_SHA512(data.bytes, data.length, digest);
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH*2];
 
-    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH*2];
-    for(int i = 0; i<CC_SHA512_DIGEST_LENGTH; i++)
-    {
-        [ret appendFormat:@"%02x",result[i]];
-    }
+    for(int i = 0; i < CC_SHA512_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
 
-    resolve(ret);
+    resolve(output);
 }
 
 @end
