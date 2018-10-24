@@ -1,0 +1,12 @@
+#tests
+test
+coverage
+
+#build tools
+.travis.yml
+.jenkins.yml
+.codeclimate.yml
+
+#editor settings
+.idea
+.editorconfig
