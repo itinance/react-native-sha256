@@ -11,6 +11,19 @@ yarn add react-native-sha256
 react-native link
 ```
 
+## Adding with CocoaPods
+
+Add the RNSha256 pod to your list of application pods in your Podfile, using the path from the Podfile to the installed module:
+
+```
+pod 'RNSha256', :path => '../node_modules/react-native-sha256'
+```
+
+Install pods as usual:
+```
+pod install
+```
+
 # Usage
 
 Import the lib into your project:
