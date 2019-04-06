@@ -11,3 +11,7 @@ const sha256Lib = NativeModules.sha256Lib;
 export function sha256(data) {
   return sha256Lib.sha256(data);
 }
+
+export function sha1(data) {
+  return sha256Lib.sha1(data);
+}
