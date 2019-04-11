@@ -12,6 +12,6 @@ export function sha256(data: string) {
   return sha256Lib.sha256(data);
 }
 
-export function sha1(data) {
+export function sha1(data: string) {
   return sha256Lib.sha1(data);
 }
