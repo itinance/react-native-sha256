@@ -17,21 +17,29 @@
 
 RCT_EXPORT_MODULE()
 
+typedef unsigned char (*DIGEST_FUNCTION)(const void *data, CC_LONG len, unsigned char *md);
+
+- (NSString*) calcHash: (NSString*) subject withDigestFunction: (DIGEST_FUNCTION) digest withDigestLength: (int) digestLength {
+
+    const char* str = [subject UTF8String];
+    unsigned char result[digestLength];
+    digest(str, strlen(str), result);
+
+    NSMutableString *ret = [NSMutableString stringWithCapacity:digestLength * 2];
+    for(int i = 0; i < digestLength; i++)
+    {
+        [ret appendFormat:@"%02x",result[i]];
+    }
+
+    return ret;
+}
+
 RCT_EXPORT_METHOD(sha1: (NSString *) data
                   resolver: (RCTPromiseResolveBlock) resolve
                   rejecter: (RCTPromiseRejectBlock) reject)
 
 {
-    const char* str = [data UTF8String];
-    unsigned char result[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1(str, (CC_LONG)strlen(str), result);
-
-    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH*2];
-    for(int i = 0; i<CC_SHA1_DIGEST_LENGTH; i++)
-    {
-        [ret appendFormat:@"%02x",result[i]];
-    }
-
+    NSString *ret = [self calcHash:data withDigestFunction:CC_SHA1 withDigestLength: CC_SHA1_DIGEST_LENGTH];
     resolve(ret);
 }
 
@@ -40,16 +48,7 @@ RCT_EXPORT_METHOD(sha256: (NSString *) data
                   rejecter: (RCTPromiseRejectBlock) reject)
 
 {
-    const char* str = [data UTF8String];
-    unsigned char result[CC_SHA256_DIGEST_LENGTH];
-    CC_SHA256(str, strlen(str), result);
-
-    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH*2];
-    for(int i = 0; i<CC_SHA256_DIGEST_LENGTH; i++)
-    {
-        [ret appendFormat:@"%02x",result[i]];
-    }
-
+    NSString *ret = [self calcHash:data withDigestFunction:CC_SHA256 withDigestLength: CC_SHA256_DIGEST_LENGTH];
     resolve(ret);
 }
 
