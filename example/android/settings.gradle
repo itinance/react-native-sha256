@@ -1,0 +1,5 @@
+rootProject.name = 'sha256Example'
+include ':react-native-sha256'
+project(':react-native-sha256').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sha256/android')
+
+include ':app'
