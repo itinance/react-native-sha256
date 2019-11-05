@@ -9,8 +9,6 @@
 #import "sha256.h"
 
 #import <React/RCTUtils.h>
-#import <React/RCTImageLoader.h>
-
 #include <CommonCrypto/CommonDigest.h>
 
 @implementation sha256Lib
