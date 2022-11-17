@@ -4,6 +4,7 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
 
@@ -28,6 +29,15 @@ public class Sha256Module extends ReactContextBaseJavaModule {
     return "sha256Lib";
   }
 
+  private static byte[] readableArrayToByteArray(ReadableArray readableArray) {
+      byte[] arr = new byte[readableArray.size()];
+      for (int i = 0; i < readableArray.size(); ++i) {
+          arr[i] = (byte) readableArray.getInt(i);
+      }
+
+      return arr;
+  }
+
   String buildHash(final String toHash, final String algo, final Integer length) throws NoSuchAlgorithmException, UnsupportedEncodingException {
     MessageDigest md = MessageDigest.getInstance(algo);
     md.update(toHash.getBytes("UTF-8"));
@@ -35,6 +45,13 @@ public class Sha256Module extends ReactContextBaseJavaModule {
     return String.format("%0" + length.toString() + "x", new java.math.BigInteger(1, digest));
   }
 
+  String buildHashWithBytes(final ReadableArray toHash, final String algo, final Integer length) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    MessageDigest md = MessageDigest.getInstance(algo);
+    byte[] arr = Sha256Module.readableArrayToByteArray(toHash);
+    md.update(arr);
+    byte[] digest = md.digest();
+    return String.format("%0" + length.toString() + "x", new java.math.BigInteger(1, digest));
+  }
 
   @ReactMethod
   public void sha256(final String toHash, Promise promise) {
@@ -51,9 +68,37 @@ public class Sha256Module extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void sha256Bytes(final ReadableArray toHash, Promise promise) {
+      try {
+          String hash = buildHashWithBytes(toHash, "SHA-256", 64);
+          promise.resolve(hash);
+      } catch (NoSuchAlgorithmException e) {
+          e.printStackTrace();
+          promise.reject("sha256", e.getMessage());
+      } catch (UnsupportedEncodingException e) {
+          e.printStackTrace();
+          promise.reject("sha256", e.getMessage());
+      }
+  }
+
+  @ReactMethod
   public void sha1(final String toHash, Promise promise) {
       try {
           String hash = buildHash(toHash, "SHA-1", 40);
+          promise.resolve(hash);
+      } catch (NoSuchAlgorithmException e) {
+          e.printStackTrace();
+          promise.reject("sha1", e.getMessage());
+      } catch (UnsupportedEncodingException e) {
+          e.printStackTrace();
+          promise.reject("sha1", e.getMessage());
+      }
+  }
+
+  @ReactMethod
+  public void sha1Bytes(final ReadableArray toHash, Promise promise) {
+      try {
+          String hash = buildHashWithBytes(toHash, "SHA-1", 40);
           promise.resolve(hash);
       } catch (NoSuchAlgorithmException e) {
           e.printStackTrace();
