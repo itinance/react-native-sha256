@@ -44,7 +44,7 @@ sha256("Test").then( hash => {
 const message = new Uint8Array(8);
 const bytes = Array.from(message);
 
-sha256Bytes(message).then( hash => {
+sha256Bytes(bytes).then( hash => {
     console.log(hash);
 })
 ```
