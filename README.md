@@ -29,13 +29,22 @@ pod install
 Import the lib into your project:
 
 ```javascript
-import { sha256 } from 'react-native-sha256';
+import { sha256, sha256Bytes } from 'react-native-sha256';
 ```
 
 Build a sha256-hash:
 
 ```javascript
 sha256("Test").then( hash => {
+    console.log(hash);
+})
+```
+
+```javascript
+const message = new Uint8Array(8);
+const bytes = Array.from(message);
+
+sha256Bytes(message).then( hash => {
     console.log(hash);
 })
 ```
