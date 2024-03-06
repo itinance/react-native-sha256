@@ -1,6 +1,6 @@
 {
   "name": "react-native-sha256",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "Native sha256 react-native",
   "main": "sha256.js",
   "scripts": {
