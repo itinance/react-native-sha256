@@ -15,7 +15,7 @@
 
 RCT_EXPORT_MODULE()
 
-typedef unsigned char (*DIGEST_FUNCTION)(const void *data, CC_LONG len, unsigned char *md);
+typedef unsigned char *DIGEST_FUNCTION(const void *data, CC_LONG len, unsigned char *md);
 
 - (NSString*) calcHash: (NSString*) subject withDigestFunction: (DIGEST_FUNCTION) digest withDigestLength: (int) digestLength {
 
